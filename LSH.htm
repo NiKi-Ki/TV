@@ -1,0 +1,187 @@
+
+<!doctype html>
+
+<html lang="ru"  id="весьHTML"
+  o-ndblclick="alert('ondblclick HTML')"  on-click="javascript:alert('onclick HTML'); xxObj=this"
+  o-nselect="javascript:alert('onselect HTML')"
+  o-nmousewheel="function xxx(e){console.log('onmousewheel HTML '+e.wheelDeltaY); return false}; xxx(event)"
+ >
+
+<head>
+    <meta charset="utf-8"> <!--  -->     <!-- èç-çà ýòîãî ðóñ íå ïîíèìàåò     --> 
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"   >
+</head>
+
+<!--
+    <link rel="icon" sizes="16x16" href="-1.jpg">
+    <link rel="stylesheet" href="-TEST.css">
+
+-->
+
+<body>
+
+
+<div">
+<button id="tennis" class="button" onclick="selectSport(event,'tennis')"> tennis </button>
+<button id="soccer" class="button" onclick="selectSport(event,'football')"> футбол </button>
+
+<a href="http://www.livexscores.com/free-livescore"> livexscores </a>
+<a href="http://www.livescorehunter.com/livescores/livescore-tennis.html"> livescorehunter </a>
+</div>
+
+<br>
+
+<iframe id="LSH" frameborder="1" width="490px" height="450px" s-crolling="auto" hidden
+        onwheel="размер(event)"  o-nclick="размер(event)" o-nscroll="alert(2)" > </iframe>
+
+
+<script type="text/javascript">
+
+var eObj, xxObj //=this
+
+//var http = "http://www.livexscores.com/free.php?p=0&style=xfff,x006699,x000,xaaa,xc00,x006699,xfff,xddd,xc00,verdana,11,xeee,xfff,x000,468,xc00&timezone=0"
+
+var httpLSH = "http://www.livexscores.com/free.php?timezone=1&p=0"
+var w0=0, h0=0
+
+//[0] all matches, [4] in play, [2] not started, [3] finished, [9] yesterday 
+//  In play p=4
+
+function selectSport(e, sport) {
+// alert(e) -- [Object MouseEvent]
+// console.log(e) --  MouseEvent {isTrusted: true, screenX: 209, screenY: 127, clientX: 95, clientY: 22…}
+// alert(this) -- [Object Window] 
+// console.log(this) -- Window {external: Object, chrome: Object, document: document, xxObj: Window, speechSynthesis: SpeechSynthesis…}
+
+// typeof e.srcElement -- "object"
+
+
+
+//console.log(this)
+//alert(e)
+
+//xxObj=e
+
+
+let fr = document.getElementById("LSH") // frame
+if (w0==0) {w0=parseInt(fr.width); h0=parseInt(fr.height)}
+if (fr.height.lenght==0) { fr.width = w0; fr.height = h0}
+if (fr.hidden) {fr.hidden=false}
+fr.src = httpLSH +"&sport="+sport+"&p=" + (e.shiftKey ? "0" : "4")
+fr.name = sport.slice(0,1)
+}
+
+
+function размер(e) {
+eObj=e
+ // e.type = "wheel"
+// alert(typeof(e)) -- Object  alert(e) -- [object WheelEvent]
+// console.log(e) -- WheelEvent {isTrusted: true, deltaX: -0, deltaY: -100, deltaZ: 0, deltaMode: 0…}
+
+
+console.log("==> размер",e.type)
+//console.log(e.cancelBubble, e.cancelable,  e.preventDefault())
+console.log(чтоНажато(e)) //  "shift",e.shiftKey, "ctrl",e.ctrlKey, "alt",e.altKey, e.button)
+console.log(e.wheelDeltaX, e.wheelDeltaY)
+
+if (! e.altKey) {return}
+
+let fr = e.srcElement // iframe
+
+// = e.wheelDeltaY > 0 // y>0 => колесико вверх => уменьшаем номер / размер
+
+if (e.wheelDeltaX !== 0) { fr.width = parseInt(fr.width) + (e.wheelDeltaX > 0 ? -20 : 20) }
+if (e.wheelDeltaY !== 0) { fr.height = parseInt(fr.height) + (e.wheelDeltaY > 0 ? -20 : 20) }
+}	
+
+
+function событие(e) {
+
+eObj=e
+
+let bb = e.srcElement // input
+
+console.log("==> событие "+bb.tagName+":  "+e.type)
+console.log(чтоНажато(e))
+
+//console.log(e.cancelBubble, e.cancelable,  e.preventDefault())
+//console.log(e.wheelDeltaY, e.shiftKey, e.ctrlKey, e.altKey, e.button, e.keyCode	)
+}
+
+
+function чтоНажато(e) {
+
+return (e.shiftKey ? "SHIFT " : "") +
+       (e.ctrlKey  ? "CTRL " : "") +
+       (e.altKey   ? "ALT " : "") +
+       (e.keyCode>0 ? "key="+e.keyCode : "") +
+       (e.button>0 ? "button="+e.button : "")
+}
+document.onmousewheel=событие
+document.onclick=событие
+document.onkeydown=событие
+
+/*
+document.onmousedown=событие // "событие(event)";
+document.onkeypress=событие
+*/
+
+</script>
+
+
+<br>
+<br>
+www.livescorehunter.com/livescores/livescore-tennis.html <br>
+<a href="http://www.livexscores.com/free-livescore"> http://www.livexscores.com/free-livescore </a>  <br>
+
+
+<button id="" class=""
+        onclick="showLIVE()"> LIVE </button>
+<br>
+
+
+<iframe id="LIVE" hidden  width="100%" height=300 onwheel="размер(event)" ></iframe>
+<br>
+
+
+<script>
+
+function showLIVE() {
+
+let s = document.getElementById("LSH").name
+s = (s == "f" ? "1" : (s == "t" ? "4" : ""))
+
+fr = document.getElementById('LIVE') // frame
+
+fr.hidden = ! fr.hidden
+if (!fr.hidden) { fr.src="https://live-stream365.com/widget/get.php?lang=ru&c=w&sport=" + s }
+
+}
+</script>
+
+<!--
+
+
+<div>
+<input type="button" name="">	
+<input type="button" name="">	
+</div>
+
+<div>
+<input type="file" src="lsh.htm" name="">
+</div>
+
+<br>
+<iframe frameborder="0" width="490px" height="500px" scrolling="auto" src="http://www.livexscores.com/free.php?p=0&sport=&style=xfff,x006699,x000,xaaa,xc00,x006699,xfff,xddd,xc00,verdana,11,xeee,xfff,x000,468,xc00&timezone=0">You need Javascript enabled to view live scores.</iframe>
+
+-->
+
+
+</body>
+
+</html>
+
+
+<!-- 
+
+--?
