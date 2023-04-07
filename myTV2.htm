@@ -1,0 +1,1358 @@
+<!doctype html>
+
+<html lang="ru"  id="весьHTML"
+  style="background-color:black; color:gray;" 
+  o-ndblclick="alert('ondblclick HTML')"  on-click="javascript:alert('onclick HTML'); _xxObj=this"
+  o-nselect="javascript:alert('onselect HTML')"
+  o-nmousewheel="function xxx(e){console.log('onmousewheel HTML '+e.wheelDeltaY); return false}; xxx(event)"
+ >
+
+<head>
+    <meta charset="utf-8"> <!--  -->     <!-- èç-çà ýòîãî ðóñ íå ïîíèìàåò     --> 
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="myTV_css.css">
+
+<link rel="shortcut icon" href="https://www.youtube.com/s/desktop/02e79665/img/favicon.ico" type="image/x-icon">
+
+<script type="text/javascript" src="myScript.js"></script>
+
+<!--
+<link rel="shortcut icon" href="https://www.youtube.com/s/desktop/02e79665/img/favicon.ico" type="image/x-icon" >
+<link rel="icon" href="https://www.youtube.com/s/desktop/02e79665/img/favicon_32.png" sizes="32x32" >
+<link rel="icon" href="https://www.youtube.com/s/desktop/02e79665/img/favicon_48.png" sizes="48x48" >
+<link rel="icon" href="https://www.youtube.com/s/desktop/02e79665/img/favicon_96.png" sizes="96x96" >
+<link rel="icon" href="https://www.youtube.com/s/desktop/02e79665/img/favicon_144.png" sizes="144x144" >
+
+
+// заставка видео  https://i.ytimg.com/vi/3Q11d6I21PE/sddefault.jpg
+
+https://www.youtube.com/s/notifications/manifest/manifest.json
+
+http://htmlbook.ru/html/input
+
+??  https://www.youtube.com/get_video_info?html5=1&video_id=vvZre2cJ-Do&cpn=mn3eqmg3d_hySWT-&eurl&el=embedded&hl=ru_RU&sts=18536&lact=27&c=WEB_EMBEDDED_PLAYER&cver=20201002&cplayer=UNIPLAYER&cbr=Chrome&cbrver=49.0.2623.112&cos=Windows&cosver=5.1&width=640&height=360&ei=MOR5X-PlFcTwyQX5wxI&iframe=1&ancestor_origins=null
+//  "watchEndpoint":{"videoId":"vvZre2cJ-Do"}
+// "isUnlisted":false,"hasYpcMetadata":false,"viewCount":"222874","category":"News+\u0026+Politics","publishDate":"2020-11-30","ownerChannelName":"%D0%A1%D0%BE%D0%BB%D0%BE%D0%B2%D1%8C%D1%91%D0%B2+LIVE","liveBroadcastDetails"                         Соловьёв LIVE
+//   "liveBroadcastDetails":{"isLiveNow":false,"startTimestamp":"2020-11-30T18:30:07+00:00","endTimestamp":"2020-11-30T20:33:46+00:00"},"uploadDate":"2020-11-30"}},"trackingParams":"CAA....
+// publishDate   %22 "   %2C ,
+// ...  %2C%22publishDate%22%3A%222021-01-05%22%2C%22ownerChannelName%22%3A%22%D0%A1%D0%BE%D0%BB%D0%BE%D0%B2%D1%8C%D1%91%D0%B2+LIVE%22%2C%22uploadDate%22%3A%222021-01-05%22%7D%7D%2C%22trackingParams%22%3A%22
+
+//  не-scroll  <ytd-masthead id="masthead" slot="masthead" class="shell  chunked" disable-upgrade="true">
+
+? https://www.youtube.com/watch?v=mUyJatLJ6xg solov
+-->
+
+
+</head>
+
+<noscript>    </noscript>
+
+<script>
+
+//========== ПРОВЕРКИ
+ // document.documentElement. - ?? это сам тег <html>
+//document.documentElement.id = "MYMY"
+//alert(document.documentElement.id)
+  // <input - [object%20HTMLInputElement] 
+  // onmouseenter - <img  <iframe   
+  // draggable=true - не отмечается
+//==========
+
+var _xxObj={} // для изучения что за объект
+
+</script>
+
+
+<script>
+
+const UNDEFINED = "undefined"
+function isUNDEFINED(v) { return (typeof(v) == UNDEFINED)}
+
+const idVF = "vF", idHF = "hF", idBF = "bF", idSF = "sF", idTF = "tF"// VF - это Video Frame
+
+  //const idYT = "YT"
+  const idVF1 = "vF1", idH1="hF1"
+  const idVF2 = "vF2", idH2="hF2"
+
+const HTTP = "http", HTTP2 = "http://"
+const hYT = "https://www.youtube.com/embed/"
+const hYTm = "https://m.youtube.com/embed/"
+const _EMBED = "embed"
+const youtube = "youtube", youtube2 = "youtu.be/", vC = "v="
+//https://www.youtube.com/watch?v=xmQ0Ns4Pj4U&feature=emb_rel_pause delfi
+//https://www.youtube.com/watch?v=fVIG1rvaXYM&feature=emb_rel_pause avto
+
+var mobile = false
+mobile = window.navigator.appVersion.includes("ndroid")
+
+var nvF1=0, mvF1 = [ 
+ ["LNLwq1ofC1E","pnk.tv  NewsOne 3e0FsU1N6OQ"], ["JpTL53Su4U8","Прямой"], 
+ ["lwYzwdBiaho", "euronews"], ["IgSn1Z2rq6E ", "Україна 24"],
+ ["ErX-LbZW-zE", "НАШ"], ["6arO8p6gmBI", "Еспресо"],
+ ["e3c-XsJHQ0o", "Радио НВ live", "UCVoPOHZYyNUr1GiVnRVm2ig"], 
+ ["OZg6iXMnUBo", "ZIK UkrLive", "UCill2Ekj5IGEGJzTo2R12xw"],
+ ["uObEJTHG5gE","Дождь 15:00 ZtrzKv1IF08"], ["3Q11d6I21PE","-112"], 
+ ["21X5lGlDOfg","NASA"],
+ ["yxOAJm69mSY", "БЕЛСАТ. ЖЫВЫ ЭФІР"], 
+ ["DC2mRA9fDCM", "РБК"], ["NH7wu_O0hMc", "Москва 24"], ["ZMrb6E7m2YI", "-Вести FM"], 
+ ["i_OzppNpK5U", "НАСТОЯЩЕЕ ВРЕМЯ"]
+ 
+ ,["", "???   не прямые"]
+ ,["QN-mkaC6zrQ", "rada 30.03"], ["jPiXnoC44", "rada 26.01"]
+ ,["i4sH4PBxOMY", "Эхо Москвы 05.11"]
+ ,["ofEfQKhk-BY", "5 канал"]
+ ]
+
+// ,["", ""]
+
+//  Прямий   https://www.youtube.com/channel/UCH9H_b9oJtSHBovh94yB5HA
+//  rada new  https://www.youtube.com/channel/UCT_QirupNzM7h2EMypxuIxw
+// 5 канал     https://www.youtube.com/channel/UCkyrSWEcjZKpIwMxiPfOcgg
+
+// Шахтар - Боруссія. Катастрофа.    https://www.youtube.com/watch?v=ba5_mbIo-PE
+
+// arab https://www.youtube.com/watch?v=vwQSBKb5y9M&feature=emb_rel_err
+// utkin https://www.youtube.com/watch?v=vNY5aWuOdT8&feature=emb_rel_err
+// https://www.youtube.com/channel/UCzlzGhKI5Y1LIeDJI53cWjQ Вечерний Ургант
+// https://youtu.be/B273UoAsJwE
+// https://www.youtube.com/watch?v=JykNztKHKPs&list=PLm3gZzAZXT4s6Q4z7FNKVnRiqrw7gx7gO
+
+//  ⚡Фіґляр референдумний: Прямим текстом DROZDOV https://www.youtube.com/watch?v=Qhvxm9ldqz0
+
+// nash https://www.youtube.com/watch?v=ErX-LbZW-zE&feature=emb_rel_pause
+// 2020 / Михаил Ходорковский // 16.10.20  ivmGtgApKRQ
+// ["ogGK8rjDqJE","gordon bogdan"], ["bQIP4mnwJC0","it talk"], ["JekOB5JjuMI","itvdn bot 15.10"] ]
+// ["O2h-nrHhwls","webacad 22.09"],
+
+//  ["7hFihbgIEqk", " dom rus her"],
+// ["NRPPOsxmfkU", "solov-17"], ["Jlt1XxlukhQ", "solov 15 23"],
+
+var nvF2=0, mvF2 = [
+ ["file:///D:/H/lsh.htm", "LSH.htm"],
+ ["7Vg-eSIk-RM", "19.02 Шустер"], 
+ ["https://www.livescore.com/en/tennis","tennis"],
+ ["https://www.youtube.com/live_chat?v=px1Gmm42TS0", "https://isport.ua/369161-tennis","tennis isport"],
+ ["https://www.y2mate.com/ru/youtube","y2mate"],
+ ["https://www.bing.com/Translator","Bing Translator"],
+ ["https://mediametrics.ru/rating/ru/online.html","mediametrics"],
+ ["https://www.google.com/search?q=воскресный+вечер+с+владимиром+соловьёвым","воскресный вечер"],
+ ["https://www.youtube.com/get_video_info?html5=1&video_id=vvZre2cJ-Do","get_video_info"],
+ ["", "=== ПОСМОТРЕТЬ"],
+ ["https://www.youtube.com/live_chat?v=GmRv6OV3n4A", "live_chat"],
+ ["https://www.youtube.com/live_chat?is_popout=1&v=GmRv6OV3n4A", "live_chat is_popout"],
+ ["https://m.youtube.com/live_chat?v=GmRv6OV3n4A", "m.youtube"],
+ 
+ ["eYHLw4a2Mzw", "Богдан 04.11"],
+ ["lrQS89H13Xw", "UKRLIFE.TV  Илларионов"],
+ ["9kxJAyK4FGI", "бацман Илларионов"]
+ ]
+
+// ,["", ""]
+
+// itvdn https://www.youtube.com/watch?v=JekOB5JjuMI&feature=youtu.be
+
+// Шустер Онлайнhttps://www.youtube.com/channel/UC2FCgT_PVESYWYSiekDFfCw
+// посмотреть код фрейма  view-source:https://player.vimeo.com/video/468907346
+// view-source:https://www.youtube.com/watch?v=tQK61EWyNbI
+
+// XHR finished loading: POST     base.js:1076
+// https://www.youtube.com/youtubei/v1/player/heartbeat?alt=json&key=AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8
+
+// 112 -- https://www.youtube.com/get_video_info?html5=1&video_id=3Q11d6I21PE&cpn=WuJOH1YG6sdqSelE&eurl&el=embedded&hl=ru_RU&sts=18547&lact=74&c=WEB_EMBEDDED_PLAYER&cver=20201015&cplayer=UNIPLAYER&cbr=Chrome&cbrver=49.0.2623.112&cos=Windows&cosver=5.1&width=640&height=360&ei=Ec-IX7ThOMn2yAXSz4fAAg&iframe=1&ancestor_origins=null&living_room_app_mode=LIVING_ROOM_APP_MODE_UNSPECIFIED
+
+
+// nevz iphone https://www.youtube.com/watch?v=c-C6Bgcf7oo&feature=emb_rel_pause
+// rbk https://www.youtube.com/watch?v=lIEESbFn4GU&feature=emb_rel_pause
+// 14.10 eho nevz https://www.youtube.com/watch?v=Mwtvx_xHM-U&feature=emb_rel_pause
+
+
+//  ["https://lihe-stream365.com/onlineplayer.php?stream_id=1545440", "h-jast  1543245 kolos 1536747 dinamo-az "], 
+
+// https://www.youtube.com/watch?v=GiN61i1338Y&feature=emb_rel_pause истор США
+// https://www.youtube.com/watch?v=RzU6u233ym8&feature=emb_rel_pause  ЕДА
+// https://www.youtube.com/watch?v=dHVYqQSR4u0&feature=emb_rel_pause хасиды
+// https://www.youtube.com/watch?v=iVFYEReiiFg&feature=emb_rel_pause ukr24 gordon
+
+
+// Refused to display 'https://www.youtube.com/channel/UCLA_DiR1FfKNvjuUpBHmylQ' in a frame because it set 'X-Frame-Options' to 'SAMEORIGIN'.
+
+// https://live-stream365.com/onlineplayer.php?stream_id=1609881 R-Garros final w
+
+ // https://youtu.be/hH0qQuoK4fE Миниатюры М.Жванецкого в исполнении Романа Карцева и Виктора Ильченко (1975)
+ // sindeeha wSZOII4nALk    fake news qS4BhYXzRwU
+ // d20 13 https://www.youtube.com/watch?h=pjycWxMoUl8
+// Юрий Никулин. Анекдоты. Вокруг смеха. Анек 7Y6C2EMkQ8k
+// Владимир Высоцкий - Нет, ребята, все не так.. https://www.youtube.com/watch?h=OpXLPjG4AwA
+// ["https://lihe-stream365.com/onlineplayer.php?stream_id=1531462","usopen"]
+
+
+// <div class="html5-hideo-container" data-layer="0"> <video tabindex="-1" class="hideo-stream html5-main-hideo" controlslist="nodownload" style="width: 480px; height: 360px; left: 80px; top:0px;" src="blob:https%3A//www.youtube.com/8718047d-11b8-49fb-b6a7-b0d1c931d0e0"></video></div>
+// style="width: 427px; height: 240px; left: 0px; top: 0px;"  640 350
+// 
+
+
+</script>
+
+<body  o-nmousewheel="javascript:alert('onmousewheel body')">
+
+<!-- 
+ Not allowed to load local resource: 
+ <hideo width="496" height="288" crossorigin="" src="blob:https%3A//www.onthtime.ru/ cc64fb7c-0434-44b5-98b1-ef2df4d6f8af" class="plyr--setup" style="min-height: 288px;">
+ </hideo>
+ width="240" height="360"
+  -->
+
+
+<div>
+<img id="bF" src="YT.svg" title="YT" name 
+  onclick ="VFx_imgClick(event)"   o-nmouseenter="javascript:alert('0')" 
+  align="top"   >
+<select id="sF" name   > </select>
+<input id="hF" type="text" size=40 name  hid-den
+       s-tyle="position: relative;left: 50px"
+  placeholder="ссылка на youtube или videoId" onchange="hF_change(event)" >
+<input id="tF" type="text" size=8  placeholder="время начала" name onfocus="tF_input(event)"  o-nchange="tF_change(event)" >
+
+ <img id="b--F" src="YT.svg"  onclick ="vr()"  align="top" title="load page">
+
+</div>
+
+<iframe id="vF" hidden width=0 height=0 src=" " n-ame="1" frameborder="1" 
+  allowfullscreen    
+  onwheel = "размер(event)" 
+  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+  o-nmouseenter="javascript:alert('0')" 
+  o-ndblclick="javascript:YT_click1()"  align="no" ></iframe>
+
+
+<script>
+
+//<p>   <a href="https://www.y2mate.com/ru/youtube-mp3/xxx "> y2mate MP3</a>
+//<br>  <a href="https://www.y2mate.com/ru/youtube/hweP0B8J9Mc "> y2mate </a>
+
+
+function tF_input(e) {
+
+let t = e.srcElement.value // время начала видео
+if (!t.length) { e.srcElement.value = "0:0:0" }
+
+}
+
+
+function hF_change(e) { // ввод http   ev.type = "change"
+
+//if (ev.shiftKey) { return }
+
+//  e.srcElement - <input
+let i,h = e.srcElement.value // ссылка или код видео
+
+if ( !(i=h.indexOf(" "))) { return } // пробел вначале
+if ( !h.length) { return }
+//setСписок(idSF+"1", [_setWWW(el.name, el.value.substr(0,i)), "новый http"])
+setСписок(idSF+"1", [h = _setWWW(e.srcElement.name, h.substr(0, i<0 ? h.length : i)), h])
+
+/*
+let i,h
+let el = e.srcElement // <input
+// el.value - ссылка или код видео
+
+if ( !(i=el.value.indexOf(" "))) { return }
+if ( !el.value.length) { return }
+if (i<0) {i=el.value.length}
+//setСписок(idSF+"1", [_setWWW(el.name, el.value.substr(0,i)), "новый http"])
+setСписок(idSF+"1", [h = _setWWW(el.name, el.value.substr(0,i)), h])
+*/
+} 
+
+
+function sF_click(e) { // click на списке
+ _setWWW(e.srcElement.name, e.srcElement.value)
+}
+
+function VFx_imgClick(e) {
+ //EVENT(e)//; return
+
+let ns = false, fr = document.getElementById(e.srcElement.name) // <iframe
+
+if (e.shiftKey) { if (fr.hidden) { ns = true } else { fr.src=""} }
+else { ns = fr.hidden && (parseInt(fr.height) == 0) } // fr.src.length
+
+if (ns) { fr.height=360; fr.width=640 } // !! размеры
+fr.hidden = ! fr.hidden
+//  console.log(fr.src.length, ns)
+}
+
+
+function _setID(mId, nF, cl2) {
+
+let i = 0, el, vf=document.getElementById(mId[0])
+
+vf.name = nF
+for (i; i < mId.length; i++) {
+ el = document.getElementById(mId[i])
+ if ( ! isUNDEFINED(cl2)) { el.className += cl2 }
+ el.id += nF
+ if (i>0) { el.name = vf.id }  }
+}
+
+_setID([idVF, idBF, idHF, idSF, idTF], "1", youtube)
+_mvFx=mvF1; setСписок(idSF+"1")
+
+
+/*
+
+
+let link = document.createElement('a');
+link.download = 'TEST.css';
+link.href = "https://www.livescore.com/tennis/" // = URL.createObjectURL(blob);
+link.click();
+
+
+
+_xxObj=document.getElementById(idSF+"1")
+var xxx=[]//{"11":{}, "22":[1,2] }
+for (i = 0; i < _xxObj.length; i++) {
+   xxx.push([_xxObj[i].value,_xxObj[i].text])
+}
+console.log(typeof xxx)
+console.log(JSON.stringify(xxx))
+*/
+
+
+function setСписок2(s, mv, f, v) {
+let es = document.getElementById(s)  // <SELECT
+
+let i=0, op
+
+for (; i < mv.length; i++) {
+ if (! mv[i][1].length) { continue }
+
+ let op = document.createElement("option")
+ /* не работают на <option
+ op.onclick = EVENT; op.onselect = EVENT
+ op.onmouseenter = EVENT; op.onmouseover=EVENT; op.onmousewheel = EVENT
+ */
+ op.text = mv[i][1] // отображается в меню
+ if (!v) { es.add(op) }
+ else {
+  op.value = mv[i][0]
+  if (v>0) { es.add(op) } else { es.insertBefore(op, es.options[-v]); --v } }
+}
+es.selectedIndex = -1
+if (f) { es.onchange = f }
+/* работают
+ es.onmouseenter = EVENT; es.onmouseover=EVENT; es.onmousewheel = EVENT  
+*/  
+return es
+}
+
+
+function setСписок(s, mv) {
+let es = document.getElementById(s)  // <select
+
+if (! isUNDEFINED(mv)) { _mvFx = [ ["", "=========="], mv] }
+
+for (let i = 0; i < _mvFx.length; i++) {
+ if (_mvFx[i][1].length == 0) { continue }
+
+ let op = document.createElement("option")
+ op.value = _mvFx[i][0]
+ op.text = _mvFx[i][1]
+ // op.onclick = EVENT // sF_click
+ //op.onselect=EVENT; op.onmouseenter = EVENT//; 
+ es.add(op)
+}
+es.selectedIndex = -1
+es.onchange = sF_click
+return es
+ //es.onclick =EVENT  // sF_click //EVENT;  es.onselect = EVENT; //++ es.onmouseenter = EVENT;
+//es.onmouseenter = function(e) { console.log(e.srcElement.click.toString());  e.srcElement.click() }
+//alert(es.onmouseenter)
+}
+
+
+// .childElementCount  .length .selectedIndex type:"select-one"  
+  // "[object HTMLOptionElement]"
+  // .remove(1)  .add(m0, [before 4])  .text  .value
+  //failed to execute 'add' on 'HTMLOptionsCollection': The provided value is not of type '(HTMLOptionElement or HTMLOptGroupElement)'
+
+
+function размер(e) {
+//eObj=e
+ // e.type = "wheel"
+// alert(typeof(e)) -- Object  alert(e) -- [object WheelEvent]
+// console.log(e) -- WheelEvent {isTrusted: true, deltaX: -0, deltaY: -100, deltaZ: 0, deltaMode: 0…}
+
+
+//console.log("==> размер",e.type)
+//console.log(e.cancelBubble, e.cancelable,  e.preventDefault())
+// console.log(чтоНажато(e)) //  "shift",e.shiftKey, "ctrl",e.ctrlKey, "alt",e.altKey, e.button)
+//console.log(e.wheelDeltaX, e.wheelDeltaY)
+
+let fr = e.srcElement // <iframe
+// = e.wheelDeltaY > 0 // y>0 => колесико вверх => уменьшаем номер / размер
+
+if (e.altKey) {} // будем менять размер
+else {
+ if (! e.shiftKey) { return }
+ fr.height = 360
+ fr.width = 640
+ return }
+
+if (e.wheelDeltaY == 0) {return}
+
+// typeof fr.height - string
+
+let p = parseInt(fr.width) / parseInt(fr.height)
+fr.height = parseInt(fr.height) + (e.wheelDeltaY > 0 ? -20 : 20)
+if (fr.height < 100) { fr.hidden = true; return}
+fr.width = Math.round(parseInt(fr.height) * p)
+
+// e.cancelBubble = true // e.cancelable,  e.preventDefault()
+  return false
+} 
+
+
+function _setWWW(vf, h) {
+if (h.length==0) { return ""}
+// h - ссылка или код видео
+
+let ytID = "" // код видео youtube
+let fr = document.getElementById(vf) // <iframe
+let i = h.toLowerCase().indexOf(youtube), j = 0
+
+if (i < 0) {  // no
+ i = h.toLowerCase().indexOf(youtube2)
+ if (i >= 0) { i += youtube2.length; j = h.length} }
+else {  // youtube.com
+ i = h.indexOf(vC, i+youtube.length)
+ if (i<0) { alert("ERR http !!!  "+h); }
+ else { j = h.indexOf("&", i += vC.length); if (j<0) {j = h.length} }
+}
+
+if (j > 0) {
+ ytID = h.slice(i,j); fr.src = hYT+ytID } 
+else {
+ if (h.indexOf("://") > 0) { fr.src = h } // задан полный адрес
+ else { h.indexOf(".") > 0 ? fr.src = HTTP2 + h : ytID = h ; fr.src = hYT + h} }
+
+      //{ fr.src = (h.indexOf(".") > 0 ? HTTP2 : hYT) + h} }
+// _EMBED
+ //if (h.toLowerCase().startsWith(HTTP)) { fr.src = h } else { fr.src = HTTP2 + h} }
+
+let el = document.getElementById(idTF+fr.name) // время начала видео
+let t = el.value.trim(); el.value=""
+if (!t.length) { } else
+if (t.indexOf(":")<0) {fr.src += "?start="+t } 
+else { i = Math.round((new Date("1.1.1 "+t) - new Date("1.1.1")) / 1000)
+       if (i) {fr.src += "?start="+i } }
+
+document.title="== "+fr.src
+console.log("=== open "+fr.src)
+return (ytID.length > 0 ? ytID : fr.src)
+}
+
+
+function YT_click1() {
+ var bb = document.getElementById(idVF1)
+ bb.height=360
+ bb.width=640
+alert(bb.width)
+}
+
+
+function h1_wh(e) {
+  // e.type = "wheel"
+ // alert(typeof(e)) //- какой тип этого Object ???  [object Wheelevent]
+ // _xxObj.type  "click"
+  _xxObj=e
+
+let wUP = e.wheelDeltaY > 0 // y>0 => колесико вверх => уменьшаем номер / размер
+
+var bb = document.getElementById(idVF1)
+let d=0
+if (wUP) {d=-20} else {d=20}  // y>0 => колесико вверх => уменьшаем размер
+// !!! typeof(bb.height) - string typeof(bb.height+d) - string  typeof(bb.height-d)) - number
+
+bb.width=bb.width-(-d)
+bb.height=bb.height-(-d)  //  т.е.  height + d
+if (bb.height < 200) {bb.hidden = true}
+
+//alert(bb.outerHTML)
+//alert(typeof(bb.height))
+
+}
+
+</script>
+
+<div>
+<img id="bF" src="V2.svg" title="next" onclick ="VFx_imgClick(event)" 
+      align="top">
+<select id="sF"   > </select>
+<input id="hF" type="text" size=40 hid-den 
+       s-tyle="position: relative;left: 50px"
+       placeholder="http..." onchange="hF_change(event)" >
+<input id="tF" type="text" size=8  placeholder="время начала" name onfocus="tF_input(event)"  o-nchange="tF_change(event)" >
+</div>
+	
+<iframe id="vF" hidden width=0 height=0 src=" " n-ame="1" frameborder="1" 
+        allowfullscreen    
+        onwheel="размер(event)"></iframe>
+
+<script>
+//   align="no"
+//   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+
+_setID([idVF, idBF, idHF, idSF, idTF], "2")
+_mvFx=mvF2; setСписок(idSF+"2")
+
+function YT_click2() {
+ var bb = document.getElementById(idVF2)
+ bb.height=360
+ bb.width=640
+alert(bb.width)
+}
+
+
+function h2_wh(e) {
+
+let wUP = e.wheelDeltaY > 0 // y>0 => колесико вверх => уменьшаем номер / размер
+
+var bb = document.getElementById(idVF2)
+let d=0
+if (wUP) {d=-20} else {d=20}  // y>0 => колесико вверх => уменьшаем размер
+// !!! typeof(bb.height) - string typeof(bb.height+d) - string  typeof(bb.height-d)) - number
+
+bb.width=bb.width-(-d)
+bb.height=bb.height-(-d)  //  т.е.  height + d
+if (bb.height < 200) {bb.hidden = true; bb.src=""; bb.title=""}
+}
+</script>
+
+
+<!-- выбор каналов youtube -->
+
+<div>
+<img id="bC" src="YT.svg" title="channel" o-nclick ="VFx_imgClick(event)" align="top">
+<select id="sC"   > </select>
+<input id="fC" type="file" h-idden o-ninput="EVENT(event)" o-nselect="EVENT(event)">
+</div>
+
+<a id="aC"></a>
+
+<br>
+<textarea id="tC" o-nchange=""  o-nwheel = "размер(event)"
+          o-nselect="EVENT(event)" o-nselectstart="EVENT(event)" o-ninput="EVENT(event)" 
+          placeholder="канал youtube"
+          cols=70 rows=4 contenteditable>
+</textarea> 
+
+<!--
+<input id="hF" type="text" size=40 hid-den 
+       s-tyle="position: relative;left: 50px"
+       placeholder="http..." onchange="hF_change(event)" >
+<input id="xx" type="text" size=8 oninput="EVENT(event)" onselect="EVENT(event)" >
+<input id="tF" type="text" size=8  placeholder="время начала" name >
+-->
+
+<script>
+
+
+
+//const HTTP = "http", HTTP2 = "http://"
+const hYTc = "https://www.youtube.com/channel/"
+//const _EMBED = "embed"
+//const youtube = "youtube", youtube2 = "youtu.be/", vC = "v="
+
+var nYC=0, mYC = [
+ ["UCb2oej0JtxlnywlqoSiHHVQ", "Юрий Швец"],
+ ["UCVoPOHZYyNUr1GiVnRVm2ig", "Радио НВ"],
+ ["UC7Elc-kLydl-NAV4g204pDQ", "Популярная политика"],
+ ["UCMp5Buw-6LpbbV9r9Sl_5yg", "Фабрика новин"],
+ ["UCCcprrrcbdaj14kYPjcbj9w", "В гостях у Гордона"],
+ ["UCWAIvx2yYLK_xTYD4F2mUNw", "Живой Гвоздь"],
+ ["UCNYejKoEJ84iGgXPwTBkCCg", "Tamara Eidelman"],
+ ["UC1eFXmJNkjITxPFWTy6RsWg", "Редакция"],
+ ["UCI4hEQc8mkuK2eMsew_MwTw", "Соболь"],
+ ["UCMCgOm8GZkHp8zJ6l7_hIuA", "вДудь"],
+ ["UCuIE7-5QzeAR6EdZXwDRwuQ", "Дилетант"],
+ ["UCH9H_b9oJtSHBovh94yB5HA", "Телеканал Прямий"],
+ ["UCBzDAjLfvBUBVMMP6-K-y0w", "Ходорковский LIVE"],
+ ["UCyYl1mXWoe4z_FcxzMaDHCw", "Виктор Шендерович"],
+ ["UCieHwWZXwzIwWEjGtmQ2y6A", "Фишман"],
+ ["UC111NXlcDs0VGfyre6EiPmA", "Олег Жданов"],
+ ["UCGrvFudvfwDZD88BEzxh3Uw", "Советский юмор"],
+ ["UCiVZttFkdEwMi3QXpRqFTzQ", "ГОСТЕЛЕРАДИОФОНД"],
+ ["UCEK3tT7DcfWGWJpNEDBdWog", "Мосфильм"],
+ ["UCzaqqlriSjVyc795m86GVyg", "Юлия Латынина"],
+ ["=", "="],
+ ["UCQ4YOFsXjG9eXWZ6uLj2t2A", "Соловьёв LIVE"],
+ ["UCdubelOloxR3wzwJG9x8YqQ", "Дождь"],
+ ["UCo4GExFphiUnNiMMExvFWdg", "Эхо Москвы"],
+ ["UC7qnYpVcuFbURi3E2E6_f6Q", "Радіо Свобода"],
+ ["UCMp5Buw-6LpbbV9r9Sl_5yg", "Україна 24"],
+ ["UCL7Vqph7xNpidbgjmfxpNyg", "in time Ukraine"],
+ ["UC2D0dmLHKbIe9aACnlcTLPg", "Россия 1"],
+ ["UCFzJjgVicCtFxJ5B0P_ei8A", "euronews"],
+ ["UCR16nHT1nkmG7g9AkE9tGeQ", "60 минут"],
+ ["UC8GVl-h0H2hI8ZHuzog25NA", "Великий футбол"],
+ ["UCI0t9OsDta3rJwjN_GG3_Aw", "Футбол 1,2,3"],
+ ["UCT_QirupNzM7h2EMypxuIxw", "Rada"],
+ ["UCw5pE2GElcHeErKVyF76jjg", "TV Center"],
+ ["UC2FCgT_PVESYWYSiekDFfCw", "Shuster online"],
+ ["UCkyrSWEcjZKpIwMxiPfOcgg", "5 канал"],
+ ["UCXoJ8kY9zpLBEz-8saaT3ew", "ТСН"],
+ ["UCMEiyV8N2J93GdPNltPYM6w", "Espreso.TV"],
+ ["UCX9-cJy8dZWDI8hCnmahuLA", "Первый канал"],
+ ["UCMEMEhlnxpkTphipw-EpFMA", "UA: Українське радіо"],
+ ["UCiWMFQCGvwGSc8QWHOqcQhw", "Радио Свобода"],
+ ["UCWPwgwziiWq4dfC5aiN4IbA", "ГОВОРИТЬ ВЕЛИКИЙ ЛЬВІВ"],
+ ["UCgxTPTFbIbCWfTR9I2-5SeQ", "Навальный LIVE"],
+ ["UC7Rwwb_LNJMhixpuVmjCEeA", "Новини.LIVE"],
+ ["UCwnOCsu1g8O2MEkCY-3HCBQ", "4 канал"],
+ ["UCZdyijiiXyMyrwTYMGOVxKA", "Альбац Евгения"],
+ ["UCCcprrrcbdaj14kYPjcbj9w", "В гостях у Гордона"],
+ ["UCLA_DiR1FfKNvjuUpBHmylQ", "NASA"],
+ ["UCryGec9PdUCLjpJW2mgCuLw", "NASA JPL"],
+ ["UC3ZODI-xZfdPanPP6tKUg9g", "CosmoSapiens"],
+ [" embed/8b9OPlfygwY watch?v=8b9OPlfygwY", "     test"],
+ ["UCzlzGhKI5Y1LIeDJI53cWjQ", "Вечерний Ургант"]
+]
+// Віталій Портников     https://www.youtube.com/channel/UCV0ZrOPCKzqx36rRiPHkwFg
+// Знай 24     https://www.youtube.com/channel/UCj3-AWsBGuT_cFAIjrV4u6A
+// skrypin.ua    https://www.youtube.com/channel/UC-UYoJdfHiMXzO_FHfQaABw
+
+setСписок2("sC", mYC).onchange=sC_click
+setСписок2("sC", [[, "Добавить новый канал"]])
+
+
+function sC_click(e) {
+// e.srcElement - <SELECT
+
+let ss=e.srcElement, tC=document.getElementById("tC")  
+let aC=document.getElementById("aC") 
+
+if ((i=ss.selectedIndex) < mYC.length)
+ { j=tC.value.length; tC.value += (j ? "\n" : "") + hYTc + mYC[i][0];
+   aC.innerText=mYC[i][1]; aC.href=hYTc + mYC[i][0] }
+else if (i < ss.options.length-1) /* на добавленном */
+ { j=tC.value.length;
+   tC.value += (j ? "\n" : "")+(ss.options[i].value.length ? ss.options[i].value : ss.options[i].text)  /*  aC.  */ }
+else {   /* добавляем новый канал в список */
+ tC.value=tC.value.trim()
+ if ( tC.value.length == 0 ) { return }
+ i = tC.value.indexOf(" ")
+ if (i<0) {
+  if (tC.value.substr(0,HTTP.length).toLowerCase() == HTTP) { /* только адрес */
+   setСписок2("sC", [["", tC.value.trim()]],0,-ss.options.length+1) }
+  else { alert("Не задан адрес канала "+HTTP) } }
+ else if (tC.value.substr(0,HTTP.length).toLowerCase() == HTTP) { /* адрес  название */
+  setСписок2("sC", [[tC.value.slice(0,i), tC.value.slice(i).trim()]],0,-ss.options.length+1) }
+ else {   /* название  адрес */
+  i = tC.value.lastIndexOf(" ")
+  if (tC.value.substr(i+1,HTTP.length).toLowerCase() == HTTP) {
+   setСписок2("sC", [[tC.value.slice(i+1), tC.value.slice(0,i).trim()]],0,-ss.options.length+1) }
+  else { alert("Не задан адрес канала "+HTTP) } }
+ ss.selectedIndex=-1
+ return }
+
+tC.selectionStart=(j ? ++j : 0); // tC.selectionEnd = tC.value.length - вроде автоматически
+} // sC_click  zgZdx8p4Ito
+
+
+setRead("fC", "tC")
+
+function consolelog(txt, _to ) {
+// _to: 0 или отсуствует - минимум на консоль + return,  id - минимум в <textarea  
+//      1 - весь обьем на лист  2 - на консоль log  3 - warm  4 - group 5 - groupEnd
+
+if (!_to) {
+ console.log(txt) }
+else if (isNaN(+_to)) {
+ let to = document.getElementById(_to)
+ to.value = to.value + "\n" + txt }
+else if (_to==1) {
+ console.log(txt) }
+else if (_to==2) {
+   }
+else if (_to==3) {
+   }
+else if (_to==4) {
+ console.groupCollapsed(txt) }
+else if (_to==3) {
+   }
+
+else { 
+}
+
+}  // consolelog
+
+function setRead(id, idTo) {
+
+let inp=document.getElementById(id) // <INPUT
+inp._TO = ( idTo ? idTo : "")
+
+  inp.onabort=function (e) { EVENT(e);}
+  inp.ondblclick=function (e) { EVENT(e);return false  }
+  inp.onclose=function (e) { EVENT(e);}
+  inp.oncancel=function (e) { EVENT(e);}
+  inp.onloadstart=function (e) { EVENT(e);}
+  inp.onmouseover=function (e) { EVENT(e); if (e.which==3) {return false}  }
+  inp.oninput=function (e) { EVENT(e);}
+
+ inp.onclick = function (e) { /*EVENT(e);*/
+   if (e.shiftKey) {} else {
+   if (e.type.startsWith("mouse") && e.which>0 ) {} else {
+    return; /* => обычную обработку */ } }
+
+
+  /*if (!e.shiftKey) { return }; /* => обычную обработку */
+  
+
+  let inp=e.srcElement; /* <INPUT */
+  if (!inp.files.length) { consolelog("Файл не выбран!", inp._TO); return false}
+  новый_mmh()
+
+  let rr,ff
+  /* будем читать файл */
+  rr = new FileReader();
+  rr._TO = inp._TO; //  rr._ACT=0
+  mmh.reader=rr
+
+  ff = inp.files[0];
+  if (ff.name.endsWith(".js")) {
+   rr._ACT=0
+   console.warn('s=document.createElement("script");s.innerText=mmh.reader.result;document.head.appendChild(s); s.remove()', 
+     "  // выполнить скрипт")} /* код для выполнения загруженного скрипта */
+  else if (e.altKey) { rr._ACT=2 /* только разобрать страницу */ } else
+                     { rr._ACT=3 /* + выполнить скрипты */ };
+
+  rr.readAsText(ff); /* "utf-8" */
+  console.log("\n\nчтение ",ff.name);
+
+  rr.onloadend = function(e) { /* this. - это  FileReader */
+   /* e: e.toString() "[object ProgressEvent]"
+      ProgressEvent {type: "loadend"   lengthComputable: true, loaded: 985507, total: 985507, …}
+      .srcElement : FileReader    timeStamp:18507051.995  */
+
+   if (this.readyState == this.DONE) {
+    console.log("прочитано ", e.total, this.result.length) } else { console.log("?ошибка"); return }
+
+   if (! this._ACT) {}
+   else if (this._ACT == 1) { /* ???? */
+    vs(this.result) }
+   else {
+    mmh.title = vh3(this)
+    console.log("обнаружено скриптов -", mmh.ms.length)
+    if (this._ACT !== 3) {} else
+    if (mmh.ms.length) {
+     let n = vs(this.result, mmh.ms, "var ytInitialData =")
+     if (!n) {n=-vs(this.result, mmh.ms,  "var ytcfg=")}
+     console.log("выполнено скриптов -", n);
+     if (!mmh.type.length) {
+      if (mmh.ms.length==30) {mmh.type = YTchannel} else
+      if (mmh.ms.length==34) {mmh.type = YTwatch} else
+      if (mmh.ms.length==6) {mmh.type = YTembed} } }
+    
+    consolelog(mmh.title, this._TO)
+    if (this._ACT !== 3) {} else
+    if (mmh.type == YTchannel) { vCanal(this._TO) } else
+    if (mmh.type == YTwatch) { vWatch(this._TO) } else
+    if (mmh.type == YTembed) { console.log("/embed") /* vWatch(this._TO) */ };
+   }
+  }; /* .onloadend */
+
+  return false; /* отменяем обычную обработку */
+ }; /* inp.onclick */
+ inp.onmouseover = inp.onclick
+}
+
+</script>
+
+
+
+
+<br><br>
+<textarea id="ta" onchange="forTR(this)" onselect="forTR(this)"
+          on-input="EVENT(event)" on-selectstart="-"
+          placeholder="этот текст можно перевести"
+          cols=70 rows=2 contenteditable="0" maxlength="">
+</textarea>
+<br>
+<a id="forTR" style="color: red" ></a>
+
+<script>
+// <textarea id="ta" onchange="EVENT(event)" onselect="EVENT(event)" onclick="EVENT(event)" 
+
+/*
+var ta=document.getElementById("ta")  
+var pp=document.getElementById("forTR")  
+*/
+
+function forTR(obj) {
+ //console.log(obj.toString())  // = [object HTMLTextAreaElement]  ??? для <a - пусто
+ document.getElementById("forTR").textContent = 
+  obj.selectionEnd == obj.selectionStart ? 
+   obj.value : obj.value.substring(obj.selectionStart,obj.selectionEnd)
+//console.log(_isREF(document.getElementById("forTR").textContent))
+//document.getElementById("forTR").href = 
+// _isREF(document.getElementById("forTR").textContent) ?
+//  document.getElementById("forTR").textContent : ""
+}
+
+
+function _isREF(t) {
+if (t.substr(0,6).toLowerCase() == "https:") {}
+else if (t.substr(0,5).toLowerCase() == "http:") {}
+else if (t.substr(0,4).toLowerCase() == "www.") {}
+else {return false}
+return true
+}
+</script>
+
+
+<br><br>
+<div>
+<audio id="radio" controls pr-eload="none" a-utoplay=no 
+       src="" t-ype="audio/mpeg" title="" width=500
+       o-nmousemove="EVENT(event)" on-click = "-EVENT(event)"  >
+</audio>
+
+<select id="sA" name align="t-op"  > </select>
+<br>
+<input id="hA" type="text" size=40 name m-axLength hid-den title
+       s-tyle="position: relative;left: 50px"
+       placeholder="ссылка на файл audio"
+       ondblclick="ha_dblclick(this)" o-ndblclick="EVENT(event)"
+       on-cancel="EVENT(event)" onabort="EVENT(event)" onclose="EVENT(event)"
+       onload="EVENT(event)" onended="EVENT(event)"
+       onchange="hA_change(event)" >
+<input id="tA" type="text" size=10  placeholder="время начала" name >
+
+</div>
+
+<br><br>
+<div>
+<input type="file" src="*.mp3" name="" hidden>
+</div>
+
+<script>
+ var ha_=document.getElementById("hA")  
+
+function ha_dblclick(obj) {
+//console.log(obj.toString())  // = [object HTMLTextAreaElement]  ??? для <a - пусто
+if (obj.type=="text") {obj.type="file"} else {obj.type="text"}
+
+}
+
+
+
+// .pause() .paused  play()  .volume=1 .currentTime= целое - это сек   .duration .readyState
+// <audio  'HTMLMediaElement'
+
+
+var rd=document.getElementById("radio")  
+//rd.o_npause=EVENT; rd.onplay= rd=document.getElementById("radio") ;
+// rd.volume= rd.volume -0.1}
+
+//rd.onplay=rd.onload;
+//rd.onload = function (e){EVENT(e)} //; return true}
+//rd.ondrop = function (e){EVENT(e) ; return true}
+rd.onloadstart=function (e){console.log(e.toString(),"radio load") ; return false}
+//rd.onplay=function (e){EVENT(e) ; return false}
+// работают  onloadstart onplay onpause
+ 
+// https://advance-club.ru/marathon/eng_motivation/?gcao=14312&gcpc=d66a1&yclid=2761955266356622482
+//    Бесплатный 5-дневный онлайн-марафон с Николаем Ягодкиным Как выучить английский за 3 месяца с нуля до разговора
+// 24 МАЯ, В 20:00 БЕСПЛАТНЫЙ 5‑ДНЕВНЫЙ ОНЛАЙН‑МАРАФОН с Николаем Ягодкиным
+
+var nvA1=0, mvA1 = [ 
+ ["", "Выключить"],
+ ["http://91.218.213.49:8000/ur1-mp3-m","УР1 128 кбіт/c"], 
+ ["http://91.218.213.49:8000/ur3-mp3-m","Культура 128 кбіт/c"], 
+ ["http://91.218.213.49:8000/ur2-mp3-m","Проминь 128 кбіт/c"],
+ ["https://echo.msk.ru/sounds/stream-hd","Эхо Москвы", "https://reg-echomsksni.cdnvideo.ru/stream_reg_128"],
+ ["https://stream.radiojar.com/hcrb063nn3quv","Радио Свобода", "https://www.svoboda.org/schedule/radio/81"],
+ ["http://91.218.213.49:8000/ur1-mp3","УР1 192 кбіт/c"],
+ ["http://91.218.213.49:8000/ur3-mp3","Культура 192 кбіт/c"], 
+ ["http://91.218.213.49:8000/ur2-mp3","Проминь 192 кбіт/c"]
+ ] 
+
+setСписок2("sA", mvA1).onchange=sA_click
+
+
+function sA_click(e) {
+let rd=document.getElementById("radio")  
+//debugger
+EVENT(e)  //ev=e
+// e.srcElement - <SELECT
+
+if ((i=e.srcElement.selectedIndex) < mvA1.length) 
+ { rd.src=mvA1[i][0]; rd.title=mvA1[i][1] }
+else { rd.src=e.srcElement.value; rd.title=e.srcElement.options[i].text }
+e.srcElement.selectedIndex = -1
+rd.autoplay=true
+}
+
+
+function hA_change(e) {
+ EVENT(e)
+let i,h = e.srcElement.value //  <input ссылка
+if ( !(i=h.indexOf(" "))) { return } ; /* искать с конца */  i=-1
+if ( !h.length) { return }
+  
+let rd=document.getElementById("radio")  
+rd.title=h.substr(0, i<0 ? h.length : i)
+rd.src = rd.title  // "file:///"
+
+setСписок2("sA", [[rd.title,rd.title]],0,1)
+
+
+console.log(radio.title)
+}
+
+</script>
+
+<!-- это тест svg  -->
+<br><br>
+<svg width="26" height="26" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg" 
+onclick="alert('mobile = '+mobile)">
+<title>social_yt</title><g fill="none" fill-rule="evenodd"><path d="M0 0h26v26H0z"/><path d="M25.457 6.81a3.238 3.238 0 0 0-2.299-2.273C21.13 4 13 4 13 4s-8.13 0-10.158.537A3.238 3.238 0 0 0 .543 6.811C0 8.816 0 13 0 13s0 4.184.543 6.19a3.239 3.239 0 0 0 2.299 2.273C4.87 22 13 22 13 22s8.13 0 10.158-.537a3.239 3.239 0 0 0 2.299-2.274C26 17.184 26 13 26 13s0-4.184-.543-6.19" fill="#D9252A"/><path fill="#FFFFFE" d="M10.34 16.799L17.137 13l-6.795-3.799V16.8"/></g></svg> тест svg
+
+
+<br><br>
+<a title="IP from Find-XSS.net" href="http://find-xss.net/news/article/find-ip/"><img src="http://find-xss.net/ip/1" border="0" alt="Find-XSS.net" width="88" height="31" /></a>
+<br><br>
+55555
+
+
+<script>
+
+
+
+
+
+
+function VF1_imgClick(e) {
+//--------
+//_xxObj=e
+//alert(e.type)
+
+let nh=true // будет новая ссылка
+var fr = document.getElementById(idVF1) // <iframe
+
+if (fr.hidden) {
+ fr.height=360
+ fr.width=640
+ nh = (fr.length == 0)  
+ fr.hidden = false
+ document.getElementById(idH1).hidden=false }
+
+ //nvF1=0
+
+else {
+ let wUP=false
+ 
+ if (wUP) {nvF1--; if (nvF1<0) {nvF1 = mvF1.length-1} }
+     else {nvF1++; if (nvF1 == mvF1.length) {nvF1=0} }
+}
+
+
+
+fr.title=mvF1[nvF1][0]
+if (nh) {
+ fr.src = hYT + mvF1[nvF1][0] //  if (nvF1==0) {fr.src=hYT+mvF1[nvF1]}
+ document.title=mvF1[nvF1][1]
+  console.log(fr.src)
+}
+}
+
+</script>
+
+<script>
+
+function VF2_imgClick(e) {
+
+//_xxObj=e
+//alert(e.type)
+
+let nh=true // будет новая ссылка
+var bb = document.getElementById(idVF2) //idhF+"2")
+if (bb.hidden) {
+ bb.height=500
+ bb.width=600
+ nh = (bb.length == 0)  
+ bb.hidden = false
+document.getElementById(idH2).hidden=false
+ //nvF2=0
+
+} else {
+ let wUP=false
+ 
+ if (wUP) {nvF2--; if (nvF2<0) {nvF2 = mvF2.length-1} }
+     else {nvF2++; if (nvF2 == mvF2.length) {nvF2=0} }
+}
+
+bb.title=mvF2[nvF2][1]
+if (nh) {
+ bb.src = mvF2[nvF2][0]
+ document.title=mvF2[nvF2][1]
+  console.log(bb.src)
+}
+}
+
+/*
+function VF_setWWW22222222(nhF) {
+// event.type = "change"
+
+var h = document.getElementById(idHF+nhF).value
+if (h=="") {return}
+
+var bb = document.getElementById(idhF+nhF)
+if (nhF=="1") {bb.src=hYT+h} else {bb.src=h}
+
+console.clear
+}
+*/
+
+
+ 
+</script>
+
+
+
+<script>
+
+// alert(typeof(t1)+'==')
+  // alert(document.lastModified)
+//alert(document.referrer) //document.readyState)
+</script>
+
+
+
+<script>
+
+function myNewWindow() {
+
+var brandImg = document.querySelector('#brand');
+//brandImg.className="AAAA"
+brandImg.src="2.jpg"
+//alert(brandImg.className);
+
+brandImg = document.querySelector("#YYY"); //'#brand')
+//alert(brandImg.src);
+brandImg.src="https://www.youtube.com/embed/ghm8S8TQyA4"
+//alert(brandImg.src);
+
+
+
+var myWindow = window.open("","","width=800,height=300");
+myWindow.document.open();
+myWindow.document.write("<html>");
+myWindow.document.write("<head>");
+myWindow.document.write("<title>Íîâàÿ ñòðàíèöà</title>");
+myWindow.document.write("</head>");
+myWindow.document.write("<body>");
+myWindow.document.write("<h1>        Äîêóìåíò ñôîðìèðîâàí ñ ïîìîùüþ ìåòîäà document.write</h1>");
+
+myWindow.document.write(" <br> <a href='javascript: alert(document.referrer)'  alt='aalltt'> from</a>");
+myWindow.document.write(" <br> <a href='javascript:' onclick='alert(document.URL)'> click</a>");
+
+
+
+
+myWindow.document.write("</body>");
+myWindow.document.write("</html>");
+}
+</script>
+
+<script>
+
+function newYYY() {
+
+var bb = document.querySelector("#YT1"); //'#brand')
+//alert(bb.hidden)//src); 
+//alert(bb.allowFullscreen)
+bb.hidden=false
+bb.width=640; bb.height=360
+//alert(bb.clientLeft)
+//bb.clientLeft=100
+//alert(bb.clientLeft)
+
+bb.src="https://www.youtube.com/embed/Eu5khfYO4Pc " // Трыццаць шосты дзень пратэстаў, 13 верасня | Марш Героев. 36-й день протестов, 13 сентября
+
+ //c4t0KCD8FxA  " // https://www.youtube.com/embed/Kuo1rHoKDCw  " //  "Òàì, ãäå âè ïàñë³ ìºäâºäºé" – Ñêðèï³í ïîêàçàâ ìîñê@ëÿì ¿õíþ ³ñòîðè÷íó òåðèòîð³þ
+//bb.frameborder="0"
+//  className="__web-inspector-hide-shortcut__"  class="__web-inspector-hide-shortcut__"
+
+  // https://www.youtube.com/watch?h=gkirEe1Q-8k https://www.youtube.com/watch?h=w0DCgbBKdAw&feature=emb_rel_err
+//alert(bb.height);
+//bb.height="460" //bb.height+100
+// height "360" src="https://www.youtube.com/embed/da9kNdikLcA " frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+
+// https://www.youtube.com/watch?h=ghm8S8TQyA4&feature=emb_rel_pause 5-  illar
+}
+
+</script>
+
+
+<br>
+<a href="javascript:myNewWindow()" alt='aalltt'>новое окно</a>
+<br>
+<a href="javascript:newYYY() " alt='aalltt'>==newYYY()==</a>
+
+<!--
+
+<br> <textarea contenteditable="0"  > 1111111111 </textarea> 
+<-p>  <img id="i1" class="ima"  src="11.jpg" name=TRuSY alt="спит"  a-lign="right"  border="1"
+           width="300" height="300" hspace="50" hspace="50"
+          onwheel ="javascript:imgClick() " onclick ="javascript:imgClick()  ">
+<-/p>  text around1
+
+ 222
+  <img id="i1" class="ima"  src="11.jpg" name=TRuSY alt="спит"  a-lign="right"  border="1"
+          width="150" height="150" hspace="55" hspace="20"
+          onwheel ="javascript:imgClick() "
+          onclick ="javascript:imgClick()  " onselect="javascript:alert('select')" >
+  <p>text around2 </p>
+
+
+<br><br>
+    
+-->
+             ...........
+
+
+
+ <script>
+
+  var sel=document.getElementById("sF1")
+  var mm=sel.options
+  var m0=mm[0]
+  var m1=mm[1]
+  var sel2=document.getElementById("sF2")
+  var mm2=sel2.options
+
+</script>
+
+
+
+
+<noscript>
+
+<br><br> <!--  меню  3 линии -->
+<svg width="20" height="20" style="background-color: #73945A;">
+ <g transform="translate(0, 0)">
+  <path d="M10,19.5 C4.75329488,19.5 0.5,15.2467051 0.5,10 C0.5,4.75329488 4.75329488,0.5 10,0.5 C15.2467051,0.5 19.5,4.75329488 19.5,10 C19.5,15.2467051 15.2467051,19.5 10,19.5 Z M10,18.5 C14.6944204,18.5 18.5,14.6944204 18.5,10 C18.5,5.30557963 14.6944204,1.5 10,1.5 C5.30557963,1.5 1.5,5.30557963 1.5,10 C1.5,14.6944204 5.30557963,18.5 10,18.5 Z" fill-rule="nonzero" fill="#FFffff"></path>
+  <path d="M7.5,7.10083004 C7.5,5.62170406 8.04296875,5.91259762 8.94018555,6.37268062 C9.83740234,6.83276363 12.8254395,8.54016109 13.5097656,8.92834469 C14.1940918,9.31652828 14.727417,9.93994137 13.5776367,10.6517334 C12.4278564,11.3635253 10.4291992,12.5830078 8.96459961,13.3348388 C7.5,14.0866699 7.5,13.9068603 7.5,12.6646728 C7.5,11.4224853 7.5,8.57995601 7.5,7.10083004 Z" fill="#ff"></path>
+</g></svg>
+
+
+<br><br> <!--  меню  3 линии -->
+<svg id="menu-icon" class="external-icon" preserveAspectRatio="xMidYMid meet"><g id="menu" class="yt-icons-ext" viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></g></svg>
+
+
+<br><br> <!--  title="Смотреть позже" -->
+<svg height="100%" version="1.1" viewBox="0 0 36 36" width="100%"><use class="ytp-svg-shadow" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ytp-id-25"></use><path class="ytp-svg-fill" d="M18,8 C12.47,8 8,12.47 8,18 C8,23.52 12.47,28 18,28 C23.52,28 28,23.52 28,18 C28,12.47 23.52,8 18,8 L18,8 Z M16,19.02 L16,12.00 L18,12.00 L18,17.86 L23.10,20.81 L22.10,22.54 L16,19.02 Z" id="ytp-id-25"></path></svg>
+
+
+<br><br> <!--  <div id="masthead-logo" slot="masthead-logo"> -->
+<svg id="yt-logo-svg" class="external-icon" viewBox="0 0 200 60">
+      <g id="yt-logo" viewBox="0 0 200 60" preserveAspectRatio="xMidYMid meet">
+        <g>
+          <path fill="#FF0000" d="M63,14.87c-0.72-2.7-2.85-4.83-5.56-5.56C52.54,8,32.88,8,32.88,8S13.23,8,8.32,9.31
+            c-2.7,0.72-4.83,2.85-5.56,5.56C1.45,19.77,1.45,30,1.45,30s0,10.23,1.31,15.13c0.72,2.7,2.85,4.83,5.56,5.56
+            C13.23,52,32.88,52,32.88,52s19.66,0,24.56-1.31c2.7-0.72,4.83-2.85,5.56-5.56C64.31,40.23,64.31,30,64.31,30
+            S64.31,19.77,63,14.87z"></path>
+          <polygon fill="#FFFFFF" points="26.6,39.43 42.93,30 26.6,20.57"></polygon>
+        </g>
+        <g>
+          <g id="youtube-paths">
+            <path fill="#282828" d="M92.69,48.03c-1.24-0.84-2.13-2.14-2.65-3.91c-0.52-1.77-0.79-4.12-0.79-7.06v-4
+              c0-2.97,0.3-5.35,0.9-7.15c0.6-1.8,1.54-3.11,2.81-3.93c1.27-0.82,2.94-1.24,5.01-1.24c2.04,0,3.67,0.42,4.9,1.26
+              c1.23,0.84,2.13,2.15,2.7,3.93c0.57,1.78,0.85,4.16,0.85,7.12v4c0,2.94-0.28,5.3-0.83,7.08c-0.55,1.78-1.45,3.09-2.7,3.91
+              c-1.24,0.82-2.93,1.24-5.06,1.24C95.65,49.29,93.93,48.87,92.69,48.03z M99.66,43.71c0.34-0.9,0.52-2.37,0.52-4.4v-8.59
+              c0-1.98-0.17-3.42-0.52-4.34c-0.34-0.91-0.95-1.37-1.82-1.37c-0.84,0-1.43,0.46-1.78,1.37c-0.34,0.91-0.52,2.36-0.52,4.34v8.59
+              c0,2.04,0.16,3.51,0.49,4.4c0.33,0.9,0.93,1.35,1.8,1.35C98.71,45.06,99.31,44.61,99.66,43.71z"></path>
+            <path fill="#282828" d="M188.16,37.13v1.39c0,1.77,0.05,3.09,0.16,3.98c0.1,0.88,0.32,1.53,0.65,1.93
+              c0.33,0.4,0.84,0.61,1.53,0.61c0.93,0,1.57-0.36,1.91-1.08c0.34-0.72,0.53-1.92,0.56-3.6l5.35,0.31
+              c0.03,0.24,0.04,0.57,0.04,0.99c0,2.55-0.7,4.45-2.09,5.71c-1.39,1.26-3.36,1.89-5.91,1.89c-3.06,0-5.2-0.96-6.43-2.88
+              c-1.23-1.92-1.84-4.88-1.84-8.9v-4.81c0-4.14,0.64-7.15,1.91-9.06c1.27-1.9,3.45-2.85,6.54-2.85c2.13,0,3.76,0.39,4.9,1.17
+              c1.14,0.78,1.94,1.99,2.41,3.64c0.46,1.65,0.7,3.93,0.7,6.83v4.72H188.16z M188.95,25.53c-0.31,0.39-0.52,1.03-0.63,1.91
+              c-0.11,0.88-0.16,2.23-0.16,4.02v1.98h4.54v-1.98c0-1.77-0.06-3.11-0.18-4.02c-0.12-0.91-0.34-1.56-0.65-1.93
+              c-0.31-0.37-0.8-0.56-1.46-0.56C189.75,24.94,189.26,25.14,188.95,25.53z"></path>
+            <path fill="#282828" d="M77.59,36.61l-7.06-25.49h6.16l2.47,11.55c0.63,2.85,1.09,5.27,1.39,7.28h0.18
+              c0.21-1.44,0.67-3.85,1.39-7.24l2.56-11.6h6.16L83.7,36.61v12.23h-6.11V36.61z"></path>
+            <path fill="#282828" d="M126.45,21.28v27.55h-4.85l-0.54-3.37h-0.13c-1.32,2.55-3.3,3.82-5.93,3.82c-1.83,0-3.18-0.6-4.05-1.8
+              c-0.87-1.2-1.3-3.07-1.3-5.62V21.28h6.2v20.23c0,1.23,0.13,2.11,0.4,2.63c0.27,0.52,0.72,0.79,1.35,0.79
+              c0.54,0,1.06-0.16,1.55-0.49c0.49-0.33,0.86-0.75,1.1-1.26V21.28H126.45z"></path>
+            <path fill="#282828" d="M158.27,21.28v27.55h-4.85l-0.54-3.37h-0.13c-1.32,2.55-3.3,3.82-5.93,3.82c-1.83,0-3.18-0.6-4.05-1.8
+              c-0.87-1.2-1.3-3.07-1.3-5.62V21.28h6.2v20.23c0,1.23,0.13,2.11,0.4,2.63c0.27,0.52,0.72,0.79,1.35,0.79
+              c0.54,0,1.06-0.16,1.55-0.49c0.49-0.33,0.86-0.75,1.1-1.26V21.28H158.27z"></path>
+            <path fill="#282828" d="M143.31,16.11h-6.16v32.72h-6.07V16.11h-6.16v-4.99h18.38V16.11z"></path>
+            <path fill="#282828" d="M178.8,25.69c-0.38-1.74-0.98-3-1.82-3.78c-0.84-0.78-1.99-1.17-3.46-1.17c-1.14,0-2.2,0.32-3.19,0.97
+              c-0.99,0.64-1.75,1.49-2.29,2.54h-0.05l0-14.52h-5.98v39.11h5.12l0.63-2.61h0.13c0.48,0.93,1.2,1.66,2.16,2.2
+              c0.96,0.54,2.02,0.81,3.19,0.81c2.1,0,3.64-0.97,4.63-2.9c0.99-1.93,1.48-4.95,1.48-9.06v-4.36
+              C179.36,29.84,179.17,27.43,178.8,25.69z M173.11,36.93c0,2.01-0.08,3.58-0.25,4.72c-0.16,1.14-0.44,1.95-0.83,2.43
+              c-0.39,0.48-0.91,0.72-1.57,0.72c-0.51,0-0.98-0.12-1.42-0.36c-0.43-0.24-0.79-0.6-1.06-1.08V27.71
+              c0.21-0.75,0.57-1.36,1.08-1.84c0.51-0.48,1.06-0.72,1.66-0.72c0.63,0,1.12,0.25,1.46,0.74c0.34,0.49,0.58,1.33,0.72,2.49
+              c0.13,1.17,0.2,2.83,0.2,4.99V36.93z"></path>
+          </g>
+        </g>
+      </g>
+    </svg>
+
+<!--
+<br><br>
+<svg height="100%" version="1.1" viewBox="0 0 68 48" width="100%"><path class="ytp-large-play-button-bg" d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#f00"></path><path d="M 45,24 27,14 27,34" fill="#fff"></path></svg>
+
+-->
+
+</noscript>
+
+
+<br>
+<input type="file" name="" id="inp" s-rc="URL-URL.txt" s-ize=70  >
+
+<script>
+var inp=document.getElementById("inp")  
+
+var ff,rr,tt
+
+function vr_tv() {
+ 
+let t
+
+if (arguments.length>0) { ff=inp.files[0] }
+//console.log(f)
+console.log(ff.name)
+
+rr = new window.FileReader()  
+
+rr.readAsBinaryString(ff) //   readAsText(ff)//,"ansi")
+//setTimeout(3000)
+tt=rr.result
+console.log(rr.readyState)
+
+}
+
+</script>
+
+
+
+<script>
+
+function __tst_nav() {
+
+let tC=document.getElementById("tC")  
+let nv=window.navigator
+
+tC.value="platform="+nv.platform
+for (i = 0; i < arguments.length; i++) {
+ tC.value += "\n"+arguments[i]+"="+nv[arguments[i]];
+}
+tC.rows=(i<=4? 4 : ++i)
+//console.log(i,tC.rows)
+
+let bC=document.getElementById("bC")  
+bC.onclick= function() {if (confirm('mobile= '+mobile+"  nw(window.navigator)")) {nw(window.navigator,"","",0,100)}}
+}
+
+__tst_nav("userAgent")
+
+/*
+__tst_nav("appCodeName","appName","appVersion","userAgent","productSub")
+platform=Win32
+appCodeName=Mozilla
+appName=Netscape
+appVersion=5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.112 Safari/537.36
+userAgent=Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.112 Safari/537.36
+productSub=20030107
+*/
+
+</script>
+
+
+<br>
+<p> 
+ https://www.youtube.com/watch?v=
+<br> 
+ https://www.youtube.com/live_chat?v=
+<br>
+ https://www.youtube.com/get_video_info?html5=1&video_id=
+<br> 
+<"meta charset="utf-8">
+<br>
+ s=document.createElement("script"); s.src="D:/H/myScript.js"; document.head.appendChild(s)
+<br><br>
+ 1. s=document.createElement("script"); s.src="https://file1.uafile.com/download2.php?a=861526&b=9e9236825ada5e83a21425dc47e7cd92"; document.head.appendChild(s)
+<br>
+ 2. vi()
+<br>
+ 3. s=document.createElement("script");s.innerText=rr.result;document.head.appendChild(s);s.remove()
+</p>
+
+<br><br>
+<p>If you haven't yet, you can still watch Clay Magouyrk share details and news about Oracle Cloud Infrastructure's hybrid cloud solutions. </p>
+
+<p> Uncaught Reference Error </p>
+<p> Promise   Raw</p>
+<p> Embed raw    inherit </p>
+<p>  wrapper </p>
+<p>  wrap  Thumbnail  reveal </p>
+<p>item Section Renderer</p>
+<p>channel Featured Content Renderer</p>
+<p>No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin 'https://www.youtube.com' is therefore not allowed access.</p>
+<p>Access Control Allow Origin</p>
+<p> vehicle   assessment</p>
+
+<!--
+
+??? navigator.clipboard.writeText
+
+  C:\Documents and Settings\NICK2\Мои документы\Downloads\Галкин.mp3
+
+  <source src="http://91.218.213.49:8000/ur1-mp3" type="audio/mpeg">
+  <a href="audio/music.mp3">Скачайте музыку</a>
+  <source src="audio/music.mp3" type="audio/mpeg">
+h:Спицын.mp3
+SoundCloud Embed Player (api-web)  https://widget.sndcdn.com/widget-8c856b6-c375d55c.js
+https://nv.ua/scripts/playerjs-test.js
+//  Playerjs.com 12.7.6
+//  07.10.2020 11:59:45
+//  API - http://bit.ly/plrjsapi
+
+https://online-radio.nv.ua/radionv.mp3
+-->
+
+
+<!--
+<p><img src="1.jpg" width="150" height="150" 
+  hspace="5" hspace="7" alt="" align="left"></p>
+  <p>text around</p>
+-->
+
+<script>
+
+function imgClick() {
+
+//alert(this.name)
+var bb = document.querySelector("#i1")
+//alert(bb.height)
+//alert(typeof(bb.height))
+bb.height=bb.height-10
+bb.width=bb.width-10
+
+}
+</script>
+
+<script>
+// ? освободится память
+ _setID = 0
+// _setWWW = 0
+ _mvFx = 0
+</script>
+
+</body>
+
+</html>
