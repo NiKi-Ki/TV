@@ -1,4 +1,4 @@
-<!doctype html>
+Ыы<!doctype html>
 
 <html lang="ru"  id="весьHTML"
   style="background-color:black; color:gray;" 
@@ -12,7 +12,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="myTV_css.css">
 
-<link rel="shortcut icon" href="https://www.youtube.com/s/desktop/02e79665/img/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" h_ref="https://www.youtube.com/s/desktop/02e79665/img/favicon.ico" type="image/x-icon">
+
+
+<script>
+//alert("1"+typeof(eruda))
+const UNDEFINED = "undefined"
+function isUNDEFINED(v) { return (typeof(v) == UNDEFINED)}
+</script>
+
+<script src_= "https://cdn.jsdelivr.net/npm/eruda">
+//</script>
+
+//<script>
+//alert("2"+typeof(eruda))
+if (! isUNDEFINED(eruda))  { 
+ eruda.init()
+ alert("eruda.version  " +eruda.version)
+ console.log("eruda.version ", eruda.version) } 
+</script>
+
+
+<script src="file:///storage/emulated/0/Nick/TV/myTV/eruda301.js"> </script>
+
+
+<script> //alert("3"+typeof(eruda))
+ </script>
+
+<script>
+
+console.log(typeof(eruda)) 
+
+//alert("eruda.version  " +eruda.version)
+//console.log("eruda.version", eruda.version)
+</script>
+
+<!--
+// confirm  prompt
+// content://media/external/file/78482
+-->
+
+
 
 <script type="text/javascript" src="myScript.js"></script>
 
@@ -65,8 +105,8 @@ var _xxObj={} // для изучения что за объект
 
 <script>
 
-const UNDEFINED = "undefined"
-function isUNDEFINED(v) { return (typeof(v) == UNDEFINED)}
+//const UNDEFINED = "undefined"
+//function isUNDEFINED(v) { return (typeof(v) == UNDEFINED)}
 
 const idVF = "vF", idHF = "hF", idBF = "bF", idSF = "sF", idTF = "tF"// VF - это Video Frame
 
@@ -144,7 +184,9 @@ var nvF2=0, mvF2 = [
  
  ["eYHLw4a2Mzw", "Богдан 04.11"],
  ["lrQS89H13Xw", "UKRLIFE.TV  Илларионов"],
- ["9kxJAyK4FGI", "бацман Илларионов"]
+ ["9kxJAyK4FGI", "бацман Илларионов"], 
+["4ChTqQJLk1E", "МАТВЕЙ И КАТЯ / 19.11.2023", "list=PLnPDytUjzMjrFWeQt0xlSm1_4LJncqVV5"] 
+
  ]
 
 // ,["", ""]
@@ -565,7 +607,9 @@ const hYTc = "https://www.youtube.com/channel/"
 //const youtube = "youtube", youtube2 = "youtu.be/", vC = "v="
 
 var nYC=0, mYC = [
- ["UCb2oej0JtxlnywlqoSiHHVQ", "Юрий Швец"],
+["UCR9dQ4gjlAjYG8XCpZX72wg", "CodeUA", "@CodeUA", "t.me/cbs_info"],
+["UCA_2oV10_uipWBWlyfJj16w", "Ганапольский", "@Ganapolsky"],
+["UCb2oej0JtxlnywlqoSiHHVQ", "Юрий Швец"],
  ["UCVoPOHZYyNUr1GiVnRVm2ig", "Радио НВ"],
  ["UC7Elc-kLydl-NAV4g204pDQ", "Популярная политика"],
  ["UCMp5Buw-6LpbbV9r9Sl_5yg", "Фабрика новин"],
@@ -637,14 +681,19 @@ if ((i=ss.selectedIndex) < mYC.length)
    aC.innerText=mYC[i][1]; aC.href=hYTc + mYC[i][0] }
 else if (i < ss.options.length-1) /* на добавленном */
  { j=tC.value.length;
-   tC.value += (j ? "\n" : "")+(ss.options[i].value.length ? ss.options[i].value : ss.options[i].text)  /*  aC.  */ }
+   tC.value += (j ? "\n" : "")+(ss.options[i].value.length ? ss.options[i].value : ss.options[i].text)
+   aC.innerText = (ss.options[i].text.length ? ss.options[i].text : "w/o name") //ss.options[i].value)
+   aC.href=ss.options[i].value }
 else {   /* добавляем новый канал в список */
  tC.value=tC.value.trim()
- if ( tC.value.length == 0 ) { return }
+ if ( tC.value.length == 0 ) { 
+  tC.value = "[имя] [ссылка] [имя]"
+  ss.selectedIndex += -1
+  return }
  i = tC.value.indexOf(" ")
  if (i<0) {
   if (tC.value.substr(0,HTTP.length).toLowerCase() == HTTP) { /* только адрес */
-   setСписок2("sC", [["", tC.value.trim()]],0,-ss.options.length+1) }
+   setСписок2("sC", [[tC.value.trim(), "new link"]],0,-ss.options.length+1) }
   else { alert("Не задан адрес канала "+HTTP) } }
  else if (tC.value.substr(0,HTTP.length).toLowerCase() == HTTP) { /* адрес  название */
   setСписок2("sC", [[tC.value.slice(0,i), tC.value.slice(i).trim()]],0,-ss.options.length+1) }
@@ -656,7 +705,7 @@ else {   /* добавляем новый канал в список */
  ss.selectedIndex=-1
  return }
 
-tC.selectionStart=(j ? ++j : 0); // tC.selectionEnd = tC.value.length - вроде автоматически
+tC.selectionStart=(j ? ++j : 0);  tC.selectionEnd = tC.value.length // - вроде автоматически
 } // sC_click  zgZdx8p4Ito
 
 
